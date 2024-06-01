@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página comercial para uma agencia de desenvolvimento de sites">
+    <title>Alldaya</title>
+    <link rel="stylesheet" href="./fonts/fonts.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/plugins.css" async>
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+</head>
+
+<body>
+
+    <header id="js-header" onscroll="fixedMenu()">
+        <nav class="py-6 md:py-8">
+            <div class="container flex items-center flex-0 justify-between md:justify-start gap-10">
+
+                <a href="../"><img src="./assets/webp/Alldaya Logo.webp" alt="Logo" id="header-logo" width="1024"
+                        height="191"></a>
+
+                <div class="hidden md:flex gap-10 items-center justify-between flex-auto" id="desktop-header">
+                    <ul class="flex items-center justify-center gap-8">
+                        <li
+                            class="transition-all cursor-pointer *:text-white *:hover:text-purple font-bold duration-300">
+                            <a href="#hero">Início</a>
+                        </li>
+                        <li
+                            class="transition-all cursor-pointer *:text-white *:hover:text-purple font-bold duration-300">
+                            <a href="#diferencial">Sobre Nós</a>
+                        </li>
+                        <li
+                            class="transition-all cursor-pointer *:text-white *:hover:text-purple font-bold duration-300">
+                            <a href="#especialidades">Nossos Serviços</a>
+                        </li>
+                        <li
+                            class="transition-all cursor-pointer *:text-white *:hover:text-purple font-bold duration-300">
+                            <a href="#portfolio">Nossos Projetos</a>
+                        </li>
+                    </ul>
+
+                    <a href="https://alldaya.com.br/contratar" class="btn primary">
+                        Contratar</a>
+                </div>
+
+
+                <div class="mobile block md:hidden" id="mobile-header">
+                    <button class="hamburger hamburger--collapse hamburger-outside" type="button" aria-label="Menu"
+                        aria-controls="navigation" id="js-btn-menu-mobile" onclick="openMobileSidebar()">
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </span>
+                    </button>
+
+                    <nav id="navigation" style="display: none;">
+                        <button class="hamburger hamburger--collapse is-active hamburger-sidebar" type="button"
+                            aria-label="Menu" aria-controls="navigation" onclick="closeMobileSidebar()"
+                            id="closeButton">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+
+                        <div>
+                            <ul class="" onclick="closeMobileSidebar()">
+                                <li><a href="">Home</a></li>
+                                <li><a href="">Sobre Nós</a></li>
+                                <li><a href="">Carreiras</a></li>
+                                <li><a href="">Serviços</a></li>
+                                <li><a href="">Google Ads</a></li>
+                                <li><a href="">Meta Ads</a></li>
+                                <li><a href="">Gestão de Mídias</a></li>
+                                <li><a href="">Blog</a></li>
+                                <li><a href="">Contato</a></li>
+                            </ul>
+                        </div>
+
+                        <a href="https://alldaya.com.br/contratar" class="btn primary">
+                            Contratar
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- previno qualquer bug de responsividade pelo overflow. -->
+    <main class="overflow-hidden">
+
+        <!-- seção 1 - hero -->
+        <section class="relative *:text-white overflow-hidden">
+
+            <!-- evito que a imagem seja baixada após o arquivo css. adiciono prioridade a ela. -->
+            <img class="absolute left-0 xl:-bottom-4 h-full w-full object-cover scale-110 object-left"
+                src="./assets/webp/bg-hero.webp" alt="Background Hero" width="1919" height="863" fetchpriority="high">
+
+            <!-- crio um container pra melhorar a responsividade. em todas as telas. -->
+            <div class="container flex flex-col items-start h-full relative pt-48 pb-20 ">
+                <!-- faço a animação com HTML, CSS e JS simples, evitando um script grande para isso. -->
+                <h1 class="max-w-md w-full text-white">Todos os dias
+                    <div class="dynamic-title relative flex-nowrap h-14 w-full max-w-md font-bold text-light-blue">
+                        <span class="exit">Anunciando.</span>
+                        <span class="exit">Avançando.</span>
+                        <span class="exit">Aproximando.</span>
+                        <span class="exit">Aprendendo.</span>
+                        <span class="exit">Ativando.</span>
+                        <span class="exit">Acrescentando.</span>
+                        <span class="exit">Acertando.</span>
+                        <span class="exit">Ajustando.</span>
+                        <span class="exit">Alcançando.</span>
+                        <span class="exit">Agregando.</span>
+                        <span class="exit">Ajudando.</span>
+                        <span class="exit">Aprovando.</span>
+                        <span class="exit">Agilizando.</span>
+                        <span class="exit">Avaliando.</span>
+                        <span class="exit">Acessando.</span>
+                        <span class="exit">Apoiando.</span>
+                        <span class="exit">Atendendo.</span>
+                    </div>
+                </h1>
+                <p class="max-w-xl pb-10 pt-4">
+                    Somos uma agência de marketing digital focada em alta performance, onde nossa própria essência diz:
+                    A noite é uma eterna estratégia.
+                </p>
+                <a href="/servicos" class="btn text-lg px-8 hover:scale-110 transition-all">
+                    Conheça nossos serviços
+                    <svg class="size-5 fill-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                        <path
+                            d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
+                    </svg>
+                </a>
+
+                <div class="flex flex-row gap-10 items-center pt-14">
+                    <img loading="lazy" class="h-16 w-fit object-contain" src="./assets/webp/google-partner.webp"
+                        alt="Selo Google Partner" width="160" height="80">
+                    <img loading="lazy" class="h-16 w-fit object-contain"
+                        src="./assets/webp/rd-station-golden-partners.webp" alt="Selo RD Station Golden Partner"
+                        width="172" height="80">
+                </div>
+            </div>
+        </section>
+
+        <!-- seção 2 - conteúdo: como funciona -->
+        <!-- crio uma section por boas práticas. Terá absolute para posicionar a imagem. -->
+        <section class="relative">
+            <!-- Faço o mesmo esquema com todas as imagens à seguir. Adicionando atributos como width, height, alt, lazy loading. Evito o uso de fetchpriority, deixando o browser definir a partir daqui a melhor ordem para baixar. -->
+            <img class="hidden lg:block absolute top-0 h-full w-full object-cover" src="./assets//webp/bg-s2.webp"
+                alt="Background Section 2" width="1536" height="800" loading="lazy">
+
+            <div class="container flex w-full justify-center lg:justify-end items-center relative">
+                <div class="flex flex-col justify-around items-center md:items-start lg:max-w-lg *:text-center *:md:text-start py-16">
+                    <div class="heading pt-2">
+                        <span class="tracking-widest text-blue-400 font-extrabold text-lg">Como funciona?</span>
+                        <h2 class="text-4xl font-black pt-3">Como a <span class="text-blue-400">Alldaya</span> ajuda sua
+                            empresa?</h2>
+                    </div>
+                    <p class="font-light italic text-black py-6">As estratégias perfeitas para a sua empresa vender mais
+                        nas próximas semanas e meses.</p>
+                    <div class="flex flex-col justify-stretch *:text-start gap-4">
+                        <div
+                            class="cards flex gap-4 items-center bg-white p-6 py-3 shadow-lg rounded-xl hover:bg-slate-100 hover:shadow-xl transition-all">
+                            <img class="shrink-0 size-16 object-contain" src="./assets/webp/gads-logo.webp" alt="Icon"
+                                loading="lazy" width="64" height="64">
+                            <div class="flex flex-col justify-around">
+                                <h3 class="text-blue-400 text-xl font-black">Google Ads</h3>
+                                <p class="text-black italic font-light text-sm">Apareça para os clientes em potencial no
+                                    Google Ads!</p>
+                            </div>
+                        </div>
+                        <div
+                            class="cards flex gap-4 items-center bg-white p-6 py-3 shadow-lg rounded-xl hover:bg-slate-100 hover:shadow-xl transition-all">
+                            <img class="shrink-0 size-16 object-contain" src="./assets/webp/meta-logo.webp" alt="Icon"
+                                loading="lazy" width="96" height="64">
+                            <div class="flex flex-col justify-around">
+                                <h3 class="text-blue-400 text-xl font-black">Meta ADS</h3>
+                                <p class="text-black italic font-light text-sm">Anúncios Segmentados no Facebook e
+                                    Instagram!</p>
+                            </div>
+                        </div>
+                        <div
+                            class="cards flex gap-4 items-center bg-white p-6 py-3 shadow-lg rounded-xl hover:bg-slate-100 hover:shadow-xl transition-all">
+                            <img class="shrink-0 size-16 object-contain" src="./assets/webp/like-logo.webp" alt="Icon"
+                                loading="lazy" width="64" height="64">
+                            <div class="flex flex-col justify-around">
+                                <h3 class="text-blue-400 text-xl font-black">Gestão de Mídia</h3>
+                                <p class="text-black italic font-light text-sm">Geramos engajamento para suas redes
+                                    sociais!</p>
+                            </div>
+                        </div>
+                        <div
+                            class="cards flex gap-4 items-center bg-white p-6 py-3 shadow-lg rounded-xl hover:bg-slate-100 hover:shadow-xl transition-all">
+                            <img class="shrink-0 size-16 object-contain" src="./assets/webp/responsive-logo.webp"
+                                alt="Icon" loading="lazy" width="64" height="64">
+                            <div class="flex flex-col justify-around">
+                                <h3 class="text-blue-400 text-xl font-black">Desenvolvimento de Websites</h3>
+                                <p class="text-black italic font-light text-sm">Fazemos você vender mais construindo o
+                                    seu site!</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <a href="./contato" class="btn w-fit mt-6">Fale com um consultor!</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- seção 3 - por que contratar a Alldaya? -->
+        <!-- essa sessão terá relative pois o gradiente será feito com CSS e HTML puro. -->
+        <section class="bg-gray-950 overflow-hidden">
+            <div class="container flex flex-col items-center justify-center py-20 relative">
+                <div class="animate-floating b-grad size-[80rem] absolute -left-96 top-0 "></div>
+                <div class="animate-floating p-grad size-[80rem] absolute -right-96 top-0 "></div>
+                <h3 class="relative text-white font-black text-4xl text-center pb-10">Por que contratar a <span
+                        class="text-purple">Alldaya?</span></h3>
+                <div class="relative flex flex-wrap justify-center gap-8 *:w-full *:max-w-md *:md:w-fit w-full">
+                    <div class="bg-white p-8 px-16 rounded-xl flex flex-col items-center justify-around *:text-center">
+                        <p class="text-black text-xl font-medium">Mais de</p>
+                        <span class="py-3 text-5xl font-black text-blue-400 counter after:content-['_anos']" counter-start="0" counter-speed="20" counter-step="1" counter-end="12"></span>
+                        <p class="text-black text-xl font-medium">de experiência</p>
+                    </div>
+                    <div class="bg-white p-8 px-16 rounded-xl flex flex-col items-center justify-around *:text-center">
+                        <p class="text-black text-xl font-medium">Mais de</p>
+                        <span class="py-3 text-5xl font-black text-blue-400 counter after:content-['_clientes']" counter-start="12" counter-speed="20" counter-step="37" counter-end="900"></span>
+                        <p class="text-black text-xl font-medium">atendidos</p>
+                    </div>
+                    <div class="bg-white p-8 px-16 rounded-xl flex flex-col items-center justify-around *:text-center">
+                        <p class="text-black text-xl font-medium">Temos</p>
+                        <span class="py-3 text-5xl font-black text-blue-400 counter after:content-['%']" counter-start="0" counter-speed="5" counter-step="1" counter-end="97"></span>
+                        <p class="text-black text-xl font-medium">de aprovação</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- seção 4 - nos somos a alldaya -->
+        <section>
+            <div class="container py-20 flex flex-col items-center justify-between gap-8">
+                <h2 class="text-5xl text-center md:text-start">Nós somos a <span class="text-blue-400">Alldaya</span></h2>
+                <iframe class="rounded-3xl w-full aspect-video h-auto" width="920" height="520"
+                    src="https://www.youtube.com/embed/zIrpelAepsc?si=z24JRFjiXlpeBWL_" loading="lazy"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <a href="./contato" class="btn">Fale com um consultor!</a>
+            </div>
+        </section>
+
+        <!-- seção 5 - cases -->
+        <section>
+            <div class="container py-20 flex flex-col items-center justify-between gap-8">
+                <h2 class="text-5xl">Cases de <span class="text-blue-400">sucesso</span></h2>
+
+                <div class="swiper cases max-w-[920px]">
+                    <div class="swiper-wrapper">
+
+                        <div class="swiper-slide">
+                            <div class="aspect-video w-full">
+                                <iframe class="w-full max-w-[920px] aspect-video rounded-2xl" width="920" height="520"
+                                    src="https://www.youtube.com/embed/52T2YFYxnV8?si=EA1RkW660e6gp4_l" loading="lazy"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="aspect-video w-full">
+                                <iframe class="w-full max-w-[920px] aspect-video rounded-2xl" width="920" height="520"
+                                    src="https://www.youtube.com/embed/52T2YFYxnV8?si=EA1RkW660e6gp4_l" loading="lazy"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        
+                        <div class="swiper-slide">
+                            <div class="aspect-video w-full">
+                                <iframe class="w-full max-w-[920px] aspect-video rounded-2xl" width="920" height="520"
+                                    src="https://www.youtube.com/embed/52T2YFYxnV8?si=EA1RkW660e6gp4_l" loading="lazy"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="aspect-video w-full">
+                                <iframe class="w-full max-w-[920px] aspect-video rounded-2xl" width="920" height="520"
+                                    src="https://www.youtube.com/embed/52T2YFYxnV8?si=EA1RkW660e6gp4_l" loading="lazy"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+                <div thumbsSlider="" class="swiper cases-thumbs max-w-[920px] w-full">
+                    <div class="swiper-wrapper">
+
+                        <div class="swiper-slide">
+                            <div class="aspect-video w-full">
+                                <iframe class="w-full h-auto aspect-video" width="356" height="200"
+                                    src="https://www.youtube.com/embed/52T2YFYxnV8?si=EA1RkW660e6gp4_l" loading="lazy"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="aspect-video w-full">
+                                <iframe class="w-full h-auto aspect-video" width="356" height="200"
+                                    src="https://www.youtube.com/embed/52T2YFYxnV8?si=EA1RkW660e6gp4_l" loading="lazy"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="aspect-video w-full">
+                                <iframe class="w-full h-auto aspect-video" width="356" height="200"
+                                    src="https://www.youtube.com/embed/52T2YFYxnV8?si=EA1RkW660e6gp4_l" loading="lazy"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="aspect-video w-full">
+                                <iframe class="w-full h-auto aspect-video" width="356" height="200"
+                                    src="https://www.youtube.com/embed/52T2YFYxnV8?si=EA1RkW660e6gp4_l" loading="lazy"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <a href="./contato" class="btn">Fale com um consultor!</a>
+            </div>
+        </section>
+
+        <!-- seção 6 - faq -->
+        <section>
+            <div class="container flex flex-start justify-center lg:justify-between items-center py-10">
+                <div class="flex flex-col items-center lg:items-start justify-center lg:max-w-lg w-full gap-6">
+                    <h2 class="text-4xl">Perguntas <span class="text-blue-400">Frequentes</span></h2>
+
+                    <div class="accordion w-full *:p-6 *:py-4 *:shadow-sm *:rounded-md relative space-y-2">
+
+                        <div class="accordion-item hover:shadow-lg transition-all">
+                            <div class="accordion-header">
+                                <h5>QUANDO VOU COMEÇAR A VER O RESULTADO DAS MINHAS CAMPANHAS?</h5>
+                                <div class="icon shrink-0"><img class="shrink-0 size-4 object-contain" loading="lazy" src="./assets/webp/arrow-icon-faq.webp" alt="Seta - Perguntas Frequentes" width="24" height="24" fetchpriority="low"></div>
+                            </div>
+                            <div class="accordion-content">
+                                <p>O tempo de maturação de uma campanha leva em torno de 3 a 4 meses, pois nesse período procuramos fazer muitos testes e conhecer bem o seu projeto como um todo. Isso não impede que durante o período de maturação, se tenha ótimos resultados. Após o período de maturação, mantemos a otimização constante para continuarmos no crescimento de sua empresa.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item hover:shadow-lg transition-all">
+                            <div class="accordion-header">
+                                <h5>PRA QUEM O SERVIÇO ALLDAYA DE GOOGLE ADS É INDICADO?</h5>
+                                <div class="icon shrink-0"><img class="shrink-0 size-4 object-contain" loading="lazy" src="./assets/webp/arrow-icon-faq.webp" alt="Seta - Perguntas Frequentes" width="24" height="24" fetchpriority="low"></div>
+                            </div>
+                            <div class="accordion-content">
+                                <p>Para qualquer empresa que deseja ter um crescimento significativo em visitas, vendas e branding. O Google Ads funciona para qualquer tipo de negócio que trabalha dentro das políticas Google.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item hover:shadow-lg transition-all">
+                            <div class="accordion-header">
+                                <h5>PRA QUEM O SERVIÇO ALLDAYA DE GOOGLE ADS NÃO É INDICADO?</h5>
+                                <div class="icon shrink-0"><img class="shrink-0 size-4 object-contain" loading="lazy" src="./assets/webp/arrow-icon-faq.webp" alt="Seta - Perguntas Frequentes" width="24" height="24" fetchpriority="low"></div>
+                            </div>
+                            <div class="accordion-content">
+                                <p>Para empresários que desejam resultado da noite pro dia e esperam resultados milagrosos. Somos um empresa focada em resultados e sempre alinhamos a expectativa com o cliente para que possamos juntos atingir todas as metas.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item hover:shadow-lg transition-all">
+                            <div class="accordion-header">
+                                <h5>QUAL O VALOR MÍNIMO DE INVESTIMENTO?</h5>
+                                <div class="icon shrink-0"><img class="shrink-0 size-4 object-contain" loading="lazy" src="./assets/webp/arrow-icon-faq.webp" alt="Seta - Perguntas Frequentes" width="24" height="24" fetchpriority="low"></div>
+                            </div>
+                            <div class="accordion-content">
+                                <p>A Alldaya trabalha com clientes que investem no mínimo R$ 1.500,00 por mês em anúncios, dessa forma temos um orçamento adequado para alcançar os objetivos da sua empresa. Porém o recomendado é aumentar sempre o investimento conforme o seu resultado, assim você terá um retorno muito maior.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item hover:shadow-lg transition-all">
+                            <div class="accordion-header">
+                                <h5>EXISTE ALGUMA GARANTIA DE RESULTADOS?</h5>
+                                <div class="icon shrink-0"><img class="shrink-0 size-4 object-contain" loading="lazy" src="./assets/webp/arrow-icon-faq.webp" alt="Seta - Perguntas Frequentes" width="24" height="24" fetchpriority="low"></div>
+                            </div>
+                            <div class="accordion-content">
+                                <p>Infelizmente não podemos garantir resultados, pois ele não depende apenas da Alldaya. O resultado de vendas depende também do esforço do cliente em ter produtos de qualidade, bons preços, atendimento e etc. Porém acreditamos que juntos podemos fazer todas as alterações necessárias com o objetivo de atingir as metas do cliente.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item hover:shadow-lg transition-all">
+                            <div class="accordion-header">
+                                <h5>COMO FUNCIONA O PAGAMENTO?</h5>
+                                <div class="icon shrink-0"><img class="shrink-0 size-4 object-contain" loading="lazy" src="./assets/webp/arrow-icon-faq.webp" alt="Seta - Perguntas Frequentes" width="24" height="24" fetchpriority="low"></div>
+                            </div>
+                            <div class="accordion-content">
+                                <p>O pagamento da taxa é mensal de forma pré-paga via cartão ou boleto, após a confirmação do pagamento os serviços começam em 48 horas úteis.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <a href="./contato" class="btn">Fale com um consultor!</a>
+
+                </div>
+                <div class="relative w-full hidden lg:block">
+                    <img class="lg:absolute bottom-0 lg:translate-y-1/2" src="./assets/webp/faq-img.webp" loading="lazy" alt="Imagem de dúvida" width="620" height="728">
+                    <img class="lg:absolute bottom-0 lg:-translate-y-32 left-0" src="./assets/webp/question-icon.webp" loading="lazy" alt="Imagem de dúvida" width="80" height="80">
+                    <img class="lg:absolute bottom-0 lg:-translate-y-52 left-72" src="./assets/webp/question-icon.webp" loading="lazy" alt="Imagem de dúvida" width="80" height="80">
+                </div>
+            </div>
+        </section>
+
+        <!-- seção 7 - blog -->
+        <section>
+            <div class="container flex flex-col items-center gap-8 py-10">
+                <h2 class="text-center text-4xl md:text-start">Conheça o blog da <span class="text-blue-400">Alldaya</span></h2>
+                <a href="./contato" class="btn">Fale com um consultor!</a>
+            </div>
+        </section>
+
+        <section class="relative py-10">
+            <img class="absolute h-full w-full object-cover" src="./assets/webp/pattern-analise.webp" loading="lazy" alt="Background Pattern Sessão Análise" width="916" height="500">
+            <div class="container relative flex flex-row items-center justify-center py-10 gap-6">
+                <div class="w-full hidden md:block">
+                    <img class="pr-10" src="./assets/webp/homem-computador.webp" loading="lazy" alt="Homem sentado com seu computador observando suas redes sociais." width="578" height="332">
+                </div>
+                <div class="space-y-8 w-full max-w-lg flex flex-col items-center justify-center text-center md:block md:text-start">
+                    <h3 class="text-4xl">Vamos fazer uma análise <span class="text-blue-400">Gratuita?</span></h3>
+                    <p class="font-light italic">Receba uma análise grátis em sua conta de Google Ads, Facebook & Instagram Ads, Redes Sociais ou Website. Recomendaremos o melhor serviço para sua empresa.</p>
+                    <a href="./contato" class="btn">Solicitar análise gratuita</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- seção gmaps -->
+        <section class="w-full h-80">
+            <iframe loading="lazy" class="w-full h-full" src="https://maps.google.com/maps?q=Rua%20Henrique%20Lage%2C%20565%2C%20Sala%202%2C%20Crici%C3%BAma%2FSC%20%E2%80%93%2088801-010&amp;t=m&amp;z=14&amp;output=embed&amp;iwloc=near" title="Rua Henrique Lage, 565, Sala 2, Criciúma/SC – 88801-010" aria-label="Rua Henrique Lage, 565, Sala 2, Criciúma/SC – 88801-010"></iframe>
+        </section>
+
+        <footer class="bg-gray-950 py-10 space-y-10 text-white">
+            <section>
+                <div class="container">
+                    <h3 class="text-white text-4xl">Entre em <span class="text-purple">contato</span> conosco!</h3>
+                    <div class="grid grid-cols-1 w-full justify-between lg:gap-8 gap-4 md:grid-cols-2 py-10">
+                        <div>
+                            <a class="flex flex-row items-center gap-4" href="https://web.whatsapp.com/send?phone=+5548920026009&text=" target="_blank">
+                                <img src="./assets/webp/icon-whatsapp.webp" loading="lazy" alt="Whatsapp Ícone" width="48" height="48">
+                                <span class="font-medium text-lg">48 92002-6009</span>
+                            </a>
+                        </div>
+                        <div>
+                            <a class="flex flex-row items-center gap-4" href="mailto:contato@alldaya.com.br" target="_blank">
+                                <img src="./assets/webp/icon-mail.webp" loading="lazy" alt="E-mail Ícone" width="48" height="48">
+                                <span class="font-medium text-lg">contato@alldaya.com.br</span>
+                            </a>
+                        </div>
+                        <div>
+                            <a class="flex flex-row items-center gap-4" href="tel:+554831988342">
+                                <img src="./assets/webp/icon-phone.webp" loading="lazy" alt="Telefone Ícone" width="48" height="48">
+                                <span class="font-medium text-lg">(48) 3198-8342</span>
+                            </a>
+                        </div>
+                        <div>
+                            <a class="flex flex-row items-center gap-4" href="https://www.google.com/maps?ll=-28.679206,-49.375648&z=14&t=m&hl=pt-BR&gl=US&mapclient=embed&q=R.+Henrique+Lage,+565+-+Sala+2+-+Centro+Crici%C3%BAma+-+SC+88801-010" target="_blank" rel="noopener noreferrer">
+                                <img src="./assets/webp/icon-location.webp" loading="lazy" alt="Localização Ícone" width="48" height="48">
+                                <span class="font-medium text-lg">Rua Henrique Lage, 565, Sala 2, Criciúma/SC - 88801-010</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="container">
+                    <div class="max-w-md max-lg:mx-auto flex h-px bg-white"></div>
+                </div>
+                <div class="container flex flex-wrap lg:flex-nowrap items-start justify-center gap-4 lg:justify-between pt-4">
+                    <p>© 2024 - Todos os Direitos Reservados à Alldaya | <a class="text-blue-400" href="./termos-de-serviço">Termos de Serviço</a> </p>
+                    <div class="flex flex-row gap-4 flex-wrap">
+                        <a class="bg-blue-400 hover:bg-purple hover:scale-110 transition-all size-10 rounded-lg p-2 duration-300" href="https://www.facebook.com/alldayamarketing" target="_blank"><span class="sr-only">Acompanhe nosso Facebook</span><img src="./assets/svg/Facebook Icon.svg" alt="Facebook Logo" width="48" height="48"></a>
+                        <a class="bg-blue-400 hover:bg-purple hover:scale-110 transition-all size-10 rounded-lg p-2 duration-300" href="https://www.instagram.com/alldayamarketing/" target="_blank"><span class="sr-only">Acompanhe nosso Instagram</span><img src="./assets/svg/Instagram Icon.svg" alt="Instagram Logo" width="48" height="48"></a>
+                        <a class="bg-blue-400 hover:bg-purple hover:scale-110 transition-all size-10 rounded-lg p-2 duration-300" href="https://www.youtube.com/channel/UCXXleohLHeqBORYVSp_5Ovw" target="_blank"><span class="sr-only">Acompanhe nosso Youtube</span><img src="./assets/svg/Youtube Icon.svg" alt="Youtube Logo" width="48" height="48"></a>
+                        <a class="bg-blue-400 hover:bg-purple hover:scale-110 transition-all size-10 rounded-lg p-2 duration-300" href="https://open.spotify.com/show/6Kb1EfbJ6X9ztUY3e25wOq?si=3590f7fc4fc94a52" target="_blank"><span class="sr-only">Acompanhe nosso Spotify</span><img src="./assets/svg/Spotify Icon.svg" alt="Spotify Logo" width="48" height="48"></a>
+                        <a class="bg-blue-400 hover:bg-purple hover:scale-110 transition-all size-10 rounded-lg p-2 duration-300" href="https://www.tiktok.com/@alldayamarketing" target="_blank"><span class="sr-only">Acompanhe nosso Tiktok</span><img src="./assets/svg/TikTok Icon.svg" alt="TikTok Logo" width="48" height="48"></a>
+                        <a class="bg-blue-400 hover:bg-purple hover:scale-110 transition-all size-10 rounded-lg p-2 duration-300" href="https://www.linkedin.com/company/alldaya-marketing-digital/" target="_blank"><span class="sr-only">Acompanhe nosso LinkedIn</span><img src="./assets/svg/LinkedIn Icon.svg" alt="LinkedIn Logo" width="48" height="48"></a>
+                    </div>
+                </div>
+            </section>
+
+        </footer>
+    </main>
+
+</body>
+
+<script src="./js/plugins.js"></script>
+<script src="./js/all.js"></script>
+
+<script>
+    // Animação do Heading Title
+    document.addEventListener("DOMContentLoaded", function () {
+        const phrases = document.querySelectorAll('.dynamic-title span');
+        let currentIndex = 0;
+        let previousIndex = null;
+
+        function showNextPhrase() {
+            if (previousIndex !== null) {
+                phrases[previousIndex].classList.remove('show');
+                phrases[previousIndex].classList.add('exit');
+            }
+
+            phrases[currentIndex].classList.remove('exit');
+            phrases[currentIndex].classList.add('show');
+
+            previousIndex = currentIndex;
+            currentIndex = (currentIndex + 1) % phrases.length;
+        }
+
+        setInterval(showNextPhrase, 2000); 
+
+        showNextPhrase();
+    });
+</script>
+
+</html>

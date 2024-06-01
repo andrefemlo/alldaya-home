@@ -1,0 +1,33 @@
+header{
+    @apply w-dvw fixed z-50 *:transition-all;
+
+    #header-logo{
+        @apply w-2/3 md:w-full;
+    }
+    
+    &.active{
+        nav{
+            @apply bg-blue-400 py-3 md:py-6;
+
+        }
+    }
+
+    #navigation{
+        @apply fixed w-dvw h-dvh bg-white transition-all px-8 justify-center flex flex-col top-0 left-0 rounded-none;
+
+        > div > ul > li{
+            @apply divide-x divide-blue-900 py-3 first:pt-6 border-b-blue-900 border-b border-solid last:border-none text-center hover:text-blue-400;
+        }
+
+        .btn{
+            @apply w-fit mt-6 self-center;
+        }
+
+        #closeButton{
+            @apply absolute top-4 right-4;
+        }
+    }
+}
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after{
+    background-color: #fff !important;
+}
