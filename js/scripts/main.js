@@ -15,7 +15,7 @@ var thumbs = new Swiper(".swiper.cases-thumbs", {
 
 var swiper = new Swiper('.swiper.cases', {
   slidesPerView: 1,
-  spaceBetween: 0,
+  spaceBetween: 32,
   loop: true,
   navigation: {
     nextEl: '.swiper-button-next',
